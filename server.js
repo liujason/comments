@@ -68,7 +68,15 @@ server.get('/', function(req,res){
   });
 });
 
-
+server.get('/thread/*', function(req, res){
+    res.render('thread.jade',{
+        locals:{
+            title:'thread'
+            ,description: 'description'
+            ,author: 'Jason Liu'
+        }
+    });
+});
 //A Route for Creating a 500 Error (Useful to keep around)
 server.get('/500', function(req, res){
     throw new Error('This is a 500 Error');
